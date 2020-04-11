@@ -1,0 +1,35 @@
+{
+    "title": "将 caps_lock 映射为Hyper键",
+    "rules": [
+      {
+        "description": "将 caps_lock key 映射为 command+control+option if pressed with other keys",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "caps_lock",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "right_control",
+                "modifiers": [
+                  "right_command",
+                  "right_option"
+                ]
+              }
+            ],
+            "to_after_key_up": [
+              {
+                  "key_code": "caps_lock"
+              }
+          ]
+          }
+        ]
+      }
+    ]
+  }
